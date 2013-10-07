@@ -65,23 +65,19 @@ class CrawlersController < ApplicationController
   
 
   def site_crawler
-    # Get a Nokogiri::HTML::Document for the page we’re interested in...
-  p params[:url]
-  doc = Nokogiri::HTML(open(params[:url]))
+      # Get a Nokogiri::HTML::Document for the page we’re interested in...
+    @url = params[:url]
+    doc = Nokogiri::HTML(open(params[:url]))
 
-# Do funky things with it using Nokogiri::XML::Node methods...
+    puts doc.class
+    @title = doc.title
+    @links=doc.css('#login a')
 
-  puts doc.class
-  @title = doc.title
-  puts @title
-  @links=doc.css('#login a')
-  puts @links
-  puts "success"
     respond_to do |format|
-      format.html { redirect_to crawlers_url, notice: 'Site was successfully crawled.' }
+      format.html { redirect_to crawlers_url, notice: "#{@url} was successfully crawled."}
     end
-
   end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_crawler
