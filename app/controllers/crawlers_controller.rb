@@ -74,10 +74,10 @@ class CrawlersController < ApplicationController
     @links=doc.css('#login a')
 
     respond_to do |format|
-      format.html { redirect_to crawlers_url, notice: "#{@url} was successfully crawled."}
+      format.html { redirect_to crawlers_url, notice: "Site #{@url} was successfully crawled."}
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_crawler
