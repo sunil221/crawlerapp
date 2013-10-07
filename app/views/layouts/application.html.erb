@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crawlerapp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+       <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+       <a class="brand pull-left"><b>Web Crawler </b></a>
+    </div>
+  </div>
+</div>
+<div class="flash" style="margin-top: 50px;margin-left: 22px;">
+<% flash.each do |name, msg| %>
+    <%= msg %>
+ <% end %>
+</div>
+
+<%= yield %>
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+       <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+       <a class="brand pull-left"><b> &copy;2013 </b></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

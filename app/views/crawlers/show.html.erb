@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @crawler.url %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @crawler.title %>
+</p>
+
+<%= link_to 'Edit', edit_crawler_path(@crawler) %> |
+<%= link_to 'Back', crawlers_path %>

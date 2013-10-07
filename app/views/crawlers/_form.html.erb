@@ -1,0 +1,10 @@
+<%= form_tag(site_crawler_url) do |f| %>  
+  
+  <div class="field">
+    <%= label_tag :url %><br>
+    <%= text_field_tag :url %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Crawl Site",:class=>"btn btn-small btn-success" %>
+  </div>
+<% end %>
